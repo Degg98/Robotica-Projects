@@ -13,7 +13,7 @@ Tfin(1:3,1:3) = [0 0 1;
  %cinematica inversa per ricavare le variabili di giunto desiderate
  %attraverso la funzione ikine.m del Robotic Toolbox
  q_des_fin = ur10.ikine(Tfin);
- 
+
  
  t=0:.1:15;
  traj_des = jtraj(q0, q_des_fin, t);
