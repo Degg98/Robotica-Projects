@@ -44,7 +44,7 @@ end
 % frame of the base
 % ----------------------------------------------------------------------
 for i =1: n
-    [R0k,J_G] =  CGJacobBaseDyn( DH_table,Ts0,eye(4),o_c_{i},i );
+    [R0k,J_G] =  CGJacobBaseDyn(DH_table,Ts0,eye(4),o_c_{i},i);
     J_v_c_{i} = J_G(1:3,:);
     J_omega_c_{i} = J_G(4:6,:);
 end
