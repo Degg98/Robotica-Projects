@@ -3,7 +3,7 @@ clc
 clear
 close all
 syms q1 q2 q3 q4 q5 q6 l1 l2 l3 l4 l5 l6 dq1 dq2 dq3 dq4 dq5 dq6 m1 m2 m3 m4 m5 m6 r real
-g = 9.81;
+g = -9.81;
 
 % Compute links inertia matrix 
 I1 = Inertia(m1, l1, r);
