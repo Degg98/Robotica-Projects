@@ -232,39 +232,39 @@ end
 
 
 % Remove columns that result in zero entries
-disp ('removing columns from regressor that will result in zero and clean up parameter vector ');
-index = 0;
-for i = 1:size(Wreg,2)
-    a = symvar(Wreg(:,i));
-    if isempty(a)
-        index = [index,i];
-    end
-end
-
-index = index(2:end);
-n = size(index,2);
-for i=1:n
-    
-    Wreg(:,index(end)) = [];
-    pi_param(index(end)) = [];
-index(end) = [];
-end
-index = 0;
-for i = 1:size(pi_param,1)
-    a = isAlways(pi_param(i)<10^-6,'Unknown','false');
-    if a
-        index = [index,i];
-    end
-end
-
-index = index(2:end);
-n = size(index,2);
-for i=1:n
-    
-    Wreg(:,index(end)) = [];
-    pi_param(index(end)) = [];
-index(end) = [];
-end
+% disp ('removing columns from regressor that will result in zero and clean up parameter vector ');
+% index = 0;
+% for i = 1:size(Wreg,2)
+%     a = symvar(Wreg(:,i));
+%     if isempty(a)
+%         index = [index,i];
+%     end
+% end
+% 
+% index = index(2:end);
+% n = size(index,2);
+% for i=1:n
+%     
+%     Wreg(:,index(end)) = [];
+%     pi_param(index(end)) = [];
+% index(end) = [];
+% end
+% index = 0;
+% for i = 1:size(pi_param,1)
+%     a = isAlways(pi_param(i)<10^-6,'Unknown','false');
+%     if a
+%         index = [index,i];
+%     end
+% end
+% 
+% index = index(2:end);
+% n = size(index,2);
+% for i=1:n
+%     
+%     Wreg(:,index(end)) = [];
+%     pi_param(index(end)) = [];
+% index(end) = [];
+% end
 
 % Display complete and stop timer
 disp('Regression complete , type " Y " and " pi_param " to displays regressor and parameter vector ');

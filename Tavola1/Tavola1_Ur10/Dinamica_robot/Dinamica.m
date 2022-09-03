@@ -134,6 +134,8 @@ for i = 1:n
     end
 end
 
+test_dinamica
+
 %% Gravity matrix
 g = [0; 0; g];
 

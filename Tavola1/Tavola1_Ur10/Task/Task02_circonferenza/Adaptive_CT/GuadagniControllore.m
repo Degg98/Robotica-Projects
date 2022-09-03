@@ -4,4 +4,6 @@
 Kp = 10*diag([10 11 12 15 15 18]);
 Kv = 20*diag([10 13 13 16 18 20]);
 
+pi_param = [m1 m2 m3 m4 m5 m6 zeros(1,36)]';
+
 %convergenza a zero dell'errore

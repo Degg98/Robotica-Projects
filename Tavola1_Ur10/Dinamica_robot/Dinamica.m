@@ -3,7 +3,7 @@ clc
 clear
 close all
 syms q1 q2 q3 q4 q5 q6 l1 l2 l3 l4 l5 l6 dq1 dq2 dq3 dq4 dq5 dq6 m1 m2 m3 m4 m5 m6 r real
-g = -9.81;
+g = 9.81;
 
 % Compute links inertia matrix 
 I1 = Inertia(m1, l1, r);
@@ -20,11 +20,11 @@ dq = [dq1; dq2; dq3; dq4; dq5; dq6];
 
 % Defining a DH table for the initial configuration of the robot
 DH_table = [0, pi/2, l1, q1;
-    l2, 0, 0, q2;
-    l3, 0, 0, q3;
-    0, pi/2, l4, q4;
-    0, -pi/2, l5, q5;
-    0, 0, l6, q6];
+            l2, 0, 0, q2;
+            l3, 0, 0, q3;
+            0, pi/2, l4, q4;
+            0, -pi/2, l5, q5;
+            0, 0, l6, q6];
 
 % from D_H to matrix
 % Ai = homogeneous matrix from link i-1 to i

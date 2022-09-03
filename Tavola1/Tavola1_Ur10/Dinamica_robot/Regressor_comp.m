@@ -62,8 +62,8 @@ end
 
 % Test di correttezza
 tau_reg = simplify(Y * pi_param);
-tau = B*qdd + C*qd + G;
-res = simplify(tau - tau_reg)
+tau = subs(B*qdd + C*qd + G);
+res = subs(tau - tau_reg)
 
 % fid = fopen('Mymatrix.txt','wt');
 % for ii = 1:size(Y,1)
