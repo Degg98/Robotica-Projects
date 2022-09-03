@@ -45,13 +45,16 @@ end
 % ----------------------------------------------------------------------
 for i =1: n
     [R0k,J_G] =  CGJacobBaseDyn(DH_table,Ts0,eye(4),o_c_{i},i);
+    % Jacobiano di posizione
     J_v_c_{i} = J_G(1:3,:);
+    % Jacobiano di orientazione
     J_omega_c_{i} = J_G(4:6,:);
 end
 % Link inertial parameters
 % ------------------------
 j=1;
 for i=1:n
+    % I_i = tensore d'inerzia del link i-esimo
     I_{i} = I(j:j+2,:);
     j = j+3;
 end
@@ -67,7 +70,7 @@ tic ;
 Wreg = [];
 pi_param = [];
 
-% Express inertia tensor i in a 3 x3x6 tensor E and a vector J. These are
+% Express inertia tensor i in a (3x3)x6 tensor E and a vector J. These are
 % the components of the tensor E
 E_{1} = [1 0 0; 0 0 0; 0 0 0];
 E_{2} = [0 1 0; 1 0 0; 0 0 0];

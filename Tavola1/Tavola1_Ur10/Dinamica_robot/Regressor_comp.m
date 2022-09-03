@@ -20,10 +20,13 @@ m6 = 0.365;
 r = 0.02;
 
 m = [m1 m2 m3 m4 m5 m6]';
+
 % Links inertia matrix 
 I = [L(1).I L(2).I L(3).I L(4).I L(5).I L(6).I]';
 
+% Gravity matrix
 g = [0; 0; 9.81];
+
 % Links center of mass
 R = [L(1).r' L(2).r' L(3).r' L(4).r' L(5).r' L(6).r'];
 %--------------------------------------------------------------------
@@ -55,6 +58,13 @@ for i = 1:21
     disp(i)
     Y(:,i) = simplify(Y_(:,i));
 end
+
+
+% Test di correttezza
+tau_reg = simplify(Y * pi_param);
+tau = B*qdd + C*qd + G;
+res = simplify(tau - tau_reg)
+
 % fid = fopen('Mymatrix.txt','wt');
 % for ii = 1:size(Y,1)
 %     fprintf(fid,'%s\n', char(Y(ii,:)));

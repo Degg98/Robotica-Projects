@@ -5,7 +5,8 @@ close all
 syms q1 q2 q3 q4 q5 q6 l1 l2 l3 l4 l5 l6 dq1 dq2 dq3 dq4 dq5 dq6 m1 m2 m3 m4 m5 m6 r real
 g = 9.81;
 
-% Compute links inertia matrix 
+% Compute links inertia matrix espressi in terna baricentrica
+% e principale d'inerzia
 I1 = Inertia(m1, l1, r);
 I2 = Inertia(m2, l2, r);
 I3 = Inertia(m3, l3, r);
@@ -20,11 +21,11 @@ dq = [dq1; dq2; dq3; dq4; dq5; dq6];
 
 % Defining a DH table for the initial configuration of the robot
 DH_table = [0, pi/2, l1, q1;
-    l2, 0, 0, q2;
-    l3, 0, 0, q3;
-    0, pi/2, l4, q4;
-    0, -pi/2, l5, q5;
-    0, 0, l6, q6];
+            l2, 0, 0, q2;
+            l3, 0, 0, q3;
+            0, pi/2, l4, q4;
+            0, -pi/2, l5, q5;
+            0, 0, l6, q6];
 
 % from D_H to matrix
 % Ai = homogeneous matrix from link i-1 to i
@@ -61,10 +62,15 @@ Tee = eye(4);
 for k = 1: n
 
     disp(k)
-    eval(['J_' num2str(k) '=Geometric_Jacobian(Ts0,Tee,DH_table(1:k,:), k);']) 
+    % Calcola J_k = Jacobiano geometrico dal frame 0 al frame k
+    eval(['J_' num2str(k) '=Geometric_Jacobian(Ts0,Tee,DH_table(1:k,:), k);'])
+    % Esegue il calcolo fatto sopra e di fatto associa J = J_k
+    % solo che adesso il J ha dimensioni nxk
     J = Geometric_Jacobian(Ts0,Tee,DH_table(1:k,:), k);
     if k<n
+        % Riempie J di 0 per avere un matrice quadrata
         J = simplify([J,zeros(6,n-k)]);
+        % Associa J_k = J con j di dimensioni nxn
         eval(['J_' num2str(k) '= J;'])
     end
 
@@ -85,18 +91,19 @@ Jo_4 =  J_4(4:6,:);
 Jo_5 =  J_5(4:6,:);
 Jo_6 =  J_6(4:6,:);
 
+% Jacobiano geometrico della terna EE
 JEE = sym(zeros(size(J_6)));
 for i = 1:6
     disp(i)
     JEE(i,:) = simplify(J_6(i,:));
 end
 
-% Inertia matrix
+% Calcolo della matrice d'inerzia
 B1 = (m1*(Jv_1')*Jv_1 + Jo_1'*(R01*I1*R01')*Jo_1);
 B2 = (m2*(Jv_2')*Jv_2 + Jo_2'*(R02*I2*R02')*Jo_2);
 B3 = (m3*(Jv_3')*Jv_3 + Jo_3'*(R03*I3*R03')*Jo_3);
 B4 = (m4*(Jv_4')*Jv_4 + Jo_4'*(R04*I4*R04')*Jo_4);
-B5 = (0*(Jv_5')*Jv_5 + Jo_5'*(R05*I5*R05')*Jo_5);
+B5 = (m5*(Jv_5')*Jv_5 + Jo_5'*(R05*I5*R05')*Jo_5);
 B6 = (m6*(Jv_6')*Jv_6 + Jo_6'*(R06*I6*R06')*Jo_6);
 
 B_ = B1+B2+B3+B4+B5+B6;
@@ -127,14 +134,14 @@ for i = 1:n
     end
 end
 
-%gravity matrix
+%% Gravity matrix
 g = [0; 0; g];
 
 G1 = simplify(m1*g'*Jv_1);
 G2 = simplify(m2*g'*Jv_2);
 G3 = simplify(m3*g'*Jv_3);
 G4 = simplify(m4*g'*Jv_4);
-G5 = simplify(0*g'*Jv_5);
+G5 = simplify(m5*g'*Jv_5);
 G6 = simplify(m6*g'*Jv_6);
 
 G_ = -(G1+G2+G3+G4+G5+G6);
