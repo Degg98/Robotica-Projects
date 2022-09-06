@@ -13,6 +13,7 @@ Delta0 = simplify([g1 g2]);
 Delta = simplify([f g1 g2]);
 
 % Filtrazione
+fprintf('Inizio filtrazione...\n')
 % Passo 1
 for i=1:size(Delta0,2)
     D11(:,i) = LieBrackets(Delta0(:,i), f, x);
@@ -58,6 +59,8 @@ fprintf('Dimensione Delta4')
 R4 = rank(subs(Delta4, x, x_eq))
 
 % Termine della filtrazione
+fprintf('... termine filtrazione\n')
+
 fprintf('Il sistema è accessibile da entrambi gli ingressi\n')
 
 %% DA ACCESSIBILITA A CONTROLLABILITA
