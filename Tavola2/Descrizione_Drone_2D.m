@@ -10,9 +10,10 @@ f = [x4 x5 x6 0 -g 0]';
 g1 = [0 0 0 -sin(x3)/m cos(x3)/m 0]';
 g2 = [0 0 0 0 0 1/Ixx]';
 
-% Equilibrio
-x_eq = [0 0 0 0 0 0]';
-u_eq = [m*g 0]';
+% Equilibrio (un eq. è con x3 = 0 e u1 = m*g, l'altro è con 
+% x3 = pi e u1 = -m*g)
+x_eq = [0 0 0 0 0 0]';  % oppure x_eq = [0 0 pi 0 0 0]'
+u_eq = [m*g 0]';    % oppure u_eq = [-m*g 0]'
 
 % Calcolo il sistema linearizzato
 dx = f + g1*u1 + g2*u2;

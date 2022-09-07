@@ -82,6 +82,7 @@ fprintf(['\nIl sistema è localmente osservabile se si prendono come uscite le p
 
 txt = '\nPremere invio per continuare\n';
 invio = input(txt);
+fprintf('----------------------------------------------------------------------------\n')
 
 %% 2) Sensori di velocità lineare
 fprintf('ANALISI CON SENSORI DI VELOCITA LINEARE\n')
@@ -137,6 +138,8 @@ fprintf(['\nIl sistema non è osservabile se si prendono come uscite ' ...
 
 txt = '\nPremere invio per continuare\n';
 invio = input(txt);
+fprintf('----------------------------------------------------------------------------\n')
+
 
 %% 3) Sensori di posizione e di velocità lineare
 fprintf('ANALISI CON SENSORI DI POSIZIONE E DI VELOCITA LINEARE\n')
@@ -197,6 +200,7 @@ fprintf(['\nIl sistema è localmente osservabile se si prendono come uscite sia 
 
 txt = '\nPremere invio per continuare\n';
 invio = input(txt);
+fprintf('----------------------------------------------------------------------------\n')
 
 %% 4) Sensori di velocità lineare e angolare
 fprintf('ANALISI CON SENSORI DI VELOCITA LINEARE E ANGOLARE\n')
