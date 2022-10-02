@@ -1,5 +1,5 @@
 % Calcolo N = B_dot - 2C
-n = size(q);
+n = size(q');
 Nmat = sym(zeros(size(B)));
 for i = 1 : n
     for j = 1 : n

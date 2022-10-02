@@ -1,3 +1,4 @@
-Kd = diag([266 369 260 263 266 264]);
-lambda = diag([2 2 5 12 4 10]);
-%convergenza a zero dell'errore
+%% Adaptive BS
+%Pick and Place
+Kd =100 * diag([1 5 3 1 1 1]);
+lambda = 1*diag([20 30 30 12 10 50]);

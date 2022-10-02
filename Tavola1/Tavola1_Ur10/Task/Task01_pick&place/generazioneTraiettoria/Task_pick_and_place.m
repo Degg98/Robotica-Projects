@@ -26,11 +26,12 @@ Tfin(1:3,1:3) = [0 0 1;
  figure
  plot3(pos(:,1), pos(:,2), pos(:,3))
  
-ur10.plot(traj_des)
+
 xlabel('x [m]');
 ylabel('y [m]');
 zlabel('z [m]');
 ur10.plot(q0);
+ur10.plot(traj_des)
 
 
  
