@@ -7,8 +7,8 @@ pfin = [0.5, 0.6, 0.5];
 Tfin = transl(pfin);
 %modifico la parte di rotazione 
 Tfin(1:3,1:3) = [0 0 1;
-                 0 -1 0;
-                 1 0 0];
+                 0 1 0;
+                 -1 0 0];
              
  %cinematica inversa per ricavare le variabili di giunto desiderate
  %attraverso la funzione ikine.m del Robotic Toolbox
