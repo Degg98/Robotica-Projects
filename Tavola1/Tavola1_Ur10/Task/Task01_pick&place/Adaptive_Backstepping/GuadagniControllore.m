@@ -1,8 +1,9 @@
 %% Adaptive BS
 %Pick and Place
-Kd =100 * diag([1 5 3 1 1 1]);
-lambda = 1*diag([20 30 30 12 10 50]);
+Kd = diag([100 500 300 10 1 0.05]);
+lambda = diag([30 70 40 300 50 500]);
 
+% Link mass
 m1 = L(1).m;
 m2 = L(2).m;
 m3 = L(3).m;
