@@ -1,6 +1,7 @@
 %generazione variabili di giunto per task di pick and place
 
 %cordinate x, y e z che il robot voglio che raggiunga
+% pfin = [0.5, 0.6, 0.5];
 pfin = [0.5, 0.6, 0.5];
 
 %conversione punto in cordinate omogenee
