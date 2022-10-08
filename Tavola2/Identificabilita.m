@@ -97,7 +97,7 @@ end
 Omega5 = [Omega4; Om51; Om52; Om53];
 % Calcolo il rango di Omega5 valutato nel punto di equilibrio
 fprintf('Dimensione Omega5')
-R4 = rank(subs(Omega5, x, x_eq))
+R5 = rank(subs(Omega5, x, x_eq))
 
 % Termine della filtrazione
 fprintf('... termine filtrazione\n')
