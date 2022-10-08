@@ -1,7 +1,0 @@
-%% Adaptive BS
-% Lemniscate
-% Kd = diag([50 50 30 1 1 0.1]);
-% lambda = diag([40 60 70 90 100 100]);
-
-Kd = diag([30 40 25 9 1 0.4]);
-lambda = diag([5 10 0 12 100 150]);
