@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MF0 version="1.1" packageUris="http://schema.mathworks.com/mf0/SlCache/19700101">
+<<<<<<< Updated upstream
   <slcache.FileAttributes type="slcache.FileAttributes" uuid="03cc8656-50a9-4e9b-8584-db5186d23ce6">
     <checksum>b8OjXQwDQBylHnG5b4xBVTh2+YDbBNLJByvlx4+4eiLYOnugUNW6WYkYsdjzQ0qyrIOSZN/K0cFZqn+2KkoRrQ==</checksum>
+=======
+  <slcache.FileAttributes type="slcache.FileAttributes" uuid="cdb9b344-c031-4867-b071-06bd23d61d01">
+    <checksum>Q2WPca13+WLn60AQUdAV7l71T1XeQXWRZm0ySXHHHB/yt2hAtNR7NH8SctC1nI08mJPG8HtCUm+VXkzBv7tc6A==</checksum>
+>>>>>>> Stashed changes
   </slcache.FileAttributes>
 </MF0>

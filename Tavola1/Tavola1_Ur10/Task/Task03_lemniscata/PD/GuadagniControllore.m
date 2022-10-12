@@ -1,5 +1,5 @@
 %CT task 1
-Kp = diag([6 6 9 9 12 12]);
-Kv = diag([12 11 15 15 20 20]);
+Kp = diag([47 46 14 14 18 18]);
+Kv = diag([50 51 22 23 25 26]);
 
 %convergenza a zero dell'errore

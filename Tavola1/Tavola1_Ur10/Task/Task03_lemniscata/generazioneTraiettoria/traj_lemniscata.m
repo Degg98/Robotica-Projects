@@ -2,7 +2,7 @@
 figure(1)
 t = linspace(0, 15, 500);
 % Semi-distanza tra i fuochi
-a = 0.4;
+a = 0.3;
 % Lemniscata di Bernoulli
 % x = 0.8 * a * sin(1*t) .* real(sqrt(cos(15*t))) + 0.5;
 % y = 0.8 * a * cos(1*t) .* real(sqrt(cos(15*t))) + 0.5;

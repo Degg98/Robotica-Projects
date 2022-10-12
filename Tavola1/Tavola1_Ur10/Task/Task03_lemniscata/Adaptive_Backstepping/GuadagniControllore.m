@@ -1,4 +1,7 @@
 %% Adaptive BS
-%Pick and Place
-Kd =100 * diag([1 5 3 1 1 1]);
-lambda = 1*diag([20 30 30 12 10 50]);
+% Lemniscate
+% Kd = diag([50 50 30 1 1 0.1]);
+% lambda = diag([40 60 70 90 100 100]);
+
+Kd = diag([100 150 135 100 1 0.4]);
+lambda = diag([10 40 40 25 100 150]);
