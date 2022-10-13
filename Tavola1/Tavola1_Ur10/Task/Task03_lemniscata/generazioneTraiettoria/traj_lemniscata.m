@@ -8,7 +8,7 @@ a = 0.3;
 % y = 0.8 * a * cos(1*t) .* real(sqrt(cos(15*t))) + 0.5;
 y = a*cos(t) ./ (1+(sin(t).^2)) + 0.5;
 x = a*sin(t).*cos(t) ./ (1+(sin(t).^2)) + 0.5;
-z = 0.00001*t + 0.2;
+z = 0.00001*t + 0.5;
 plot3(x,y,z, 'LineWidth', 2.5);
 xlabel('x')
 ylabel('y')
