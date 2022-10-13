@@ -1,6 +1,11 @@
 %% Plot dei dati della simulazione
 clc
 close all
+clear q_des_1 q_des_2 q_des_3 q_des_4 q_des_5 q_des_6
+clear q_plot_1 q_plot_2 q_plot_3 q_plot_4 q_plot_5 q_plot_6
+clear e_1 e_2 e_3 e_4 e_5 e_6
+clear tau_1 tau_2 tau_3 tau_4 tau_5 tau_6
+clear m1_est m2_est m3_est m4_est m5_est m6_est
 
 %% Confronto variabili di giunto con i loro riferimenti
 n = length(out.tout);
@@ -211,7 +216,7 @@ for i=1:n
     m5_est(i) = out.estimation_params.signals.values(5,1,i);
     m6_est(i) = out.estimation_params.signals.values(6,1,i);
 end
-t = linspace(0,15,15001);
+t = linspace(0,15,n);
 figure(5)
 % Massa 1
 subplot(2,3,1)
