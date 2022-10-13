@@ -1,6 +1,6 @@
 %CT task 1
-Kp =100 * diag([1 1 2 4 5 5]);
-Kv =100 * diag([1 1 3 3 5 5]);
+Kp = diag([100 100 200 400 500 500]);
+Kv = diag([100 100 300 300 500 500]);
 
 %Masse numeriche
 m1 = L(1).m;

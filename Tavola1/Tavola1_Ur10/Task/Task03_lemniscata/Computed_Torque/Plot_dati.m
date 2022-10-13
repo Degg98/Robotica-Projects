@@ -115,7 +115,7 @@ a = 0.3;
 % Lemniscata di Bernoulli
 ydes = a*cos(t) ./ (1+(sin(t).^2)) + 0.5;
 xdes = a*sin(t).*cos(t) ./ (1+(sin(t).^2)) + 0.5;
-zdes = 0.00001*t + 0.5;
+zdes = 0.00001*t + 0.2;
 
 % Position End Effector
 hold on

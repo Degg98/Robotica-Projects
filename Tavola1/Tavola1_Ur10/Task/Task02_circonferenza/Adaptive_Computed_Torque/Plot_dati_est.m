@@ -11,12 +11,12 @@ clear m1_est m2_est m3_est m4_est m5_est m6_est
 n = length(out.tout);
 for i=1:n
     % q desiderate
-    q_des_1(i) = out.qdes.signals.values(i,1);
-    q_des_2(i) = out.qdes.signals.values(i,2);
-    q_des_3(i) = out.qdes.signals.values(i,3);
-    q_des_4(i) = out.qdes.signals.values(i,4);
-    q_des_5(i) = out.qdes.signals.values(i,5);
-    q_des_6(i) = out.qdes.signals.values(i,6);
+    q_des_1(i) = out.qdes.signals.values(1,1,i);
+    q_des_2(i) = out.qdes.signals.values(2,1,i);
+    q_des_3(i) = out.qdes.signals.values(3,1,i);
+    q_des_4(i) = out.qdes.signals.values(4,1,i);
+    q_des_5(i) = out.qdes.signals.values(5,1,i);
+    q_des_6(i) = out.qdes.signals.values(6,1,i);
     % q effettive
     q_plot_1(i) = out.q.signals.values(1,1,i);
     q_plot_2(i) = out.q.signals.values(2,1,i);
@@ -25,7 +25,7 @@ for i=1:n
     q_plot_5(i) = out.q.signals.values(5,1,i);
     q_plot_6(i) = out.q.signals.values(6,1,i);
 end
-t = linspace(0,15,15001);
+t = linspace(0,15,n);
 figure(1)
 % Giunto 1
 subplot(2,3,1)
@@ -197,7 +197,7 @@ for i=1:n
     m5_est(i) = out.estimation_params.signals.values(5,1,i);
     m6_est(i) = out.estimation_params.signals.values(6,1,i);
 end
-t = linspace(0,15,15001);
+t = linspace(0,15,n);
 figure(5)
 % Massa 1
 subplot(2,3,1)
