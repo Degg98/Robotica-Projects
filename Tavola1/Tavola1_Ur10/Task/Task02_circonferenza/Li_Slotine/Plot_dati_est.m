@@ -1,6 +1,11 @@
 %% Plot dei dati della simulazione
 clc
 close all
+clear q_des_1 q_des_2 q_des_3 q_des_4 q_des_5 q_des_6
+clear q_plot_1 q_plot_2 q_plot_3 q_plot_4 q_plot_5 q_plot_6
+clear e_1 e_2 e_3 e_4 e_5 e_6
+clear tau_1 tau_2 tau_3 tau_4 tau_5 tau_6
+clear m1_est m2_est m3_est m4_est m5_est m6_est
 
 %% Confronto variabili di giunto con i loro riferimenti
 n = length(out.tout);
@@ -104,39 +109,20 @@ for i=1:n
 end
 
 figure(2)
-t = linspace(0,15,15001);
+t = linspace(0,15,n);
+% Circonferenza
+xdes = 0.3 * sin(t) + 0.5;
+ydes = 0.3 * cos(t) + 0.5;
+zdes = 0.3 * sin(t);
 
-% X End Effector
-subplot(1,3,1)
+% Position End Effector
 hold on
-plot(t, pfin(1)+0*t)
-plot(t, posEE_x)
-legend('desired value', 'real value', 'Location','best')
-title('X End Effector')
-xlabel('[sec]')
-ylabel('[m]')
-grid on
-
-% Y End Effector
-subplot(1,3,2)
-hold on
-plot(t, pfin(2)+0*t)
-plot(t, posEE_y)
-legend('desired value', 'real value', 'Location','best')
-title('Y End Effector')
-xlabel('[sec]')
-ylabel('[m]')
-grid on
-
-% Z End Effector
-subplot(1,3,3)
-hold on
-plot(t, pfin(3)+0*t)
-plot(t, posEE_z)
-legend('desired value', 'real value', 'Location','best')
-title('Z End Effector')
-xlabel('[sec]')
-ylabel('[m]')
+plot3(posEE_x, posEE_y, posEE_z, xdes, ydes, zdes)
+legend('real value', 'desired value', 'Location','best')
+title('Pos End Effector')
+xlabel('x [m]')
+ylabel('y [m]')
+zlabel('z [m]')
 grid on
 
 %% Andamento degli errori

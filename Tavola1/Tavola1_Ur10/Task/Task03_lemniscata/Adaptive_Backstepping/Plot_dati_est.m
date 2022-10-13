@@ -122,8 +122,9 @@ hold on
 plot3(posEE_x, posEE_y, posEE_z, xdes, ydes, zdes)
 legend('real value', 'desired value', 'Location','best')
 title('Pos End Effector')
-xlabel('[sec]')
-ylabel('[m]')
+xlabel('x [m]')
+ylabel('y [m]')
+zlabel('z [m]')
 grid on
 
 %% Andamento degli errori

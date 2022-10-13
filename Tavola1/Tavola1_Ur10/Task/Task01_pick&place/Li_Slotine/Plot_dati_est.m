@@ -20,7 +20,7 @@ for i=1:n
     q_plot_5(i) = out.q.signals.values(5,1,i);
     q_plot_6(i) = out.q.signals.values(6,1,i);
 end
-t = linspace(0,15,15001);
+t = linspace(0,15,n);
 figure(1)
 % Giunto 1
 subplot(2,3,1)
@@ -104,7 +104,7 @@ for i=1:n
 end
 
 figure(2)
-t = linspace(0,15,15001);
+t = linspace(0,15,n);
 
 % X End Effector
 subplot(1,3,1)

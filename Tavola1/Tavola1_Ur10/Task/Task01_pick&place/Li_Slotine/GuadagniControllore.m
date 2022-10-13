@@ -1,7 +1,7 @@
 %% LI-SLOTINE
-%Pick and Place
-Kd = 100 * diag([100 1000 700 100 100 1]);
-lambda = diag([20 30 30 12 10 50]);
+% Pick and Place
+Kd = diag([100 100 70 10 20 0.1]);
+lambda = diag([20 30 30 12 10 100]);
 
 m1 = L(1).m;
 m2 = L(2).m;
